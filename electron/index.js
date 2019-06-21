@@ -1,0 +1,1 @@
+exports.CustomEvent = require('./custom_event')

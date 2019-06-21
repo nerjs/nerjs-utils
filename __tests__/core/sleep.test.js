@@ -17,8 +17,10 @@ test('sleep (es5)', () => {
 
     sleep(t).then(() => {
         const d2 = Date.now() - d
-        expect(allowDiff(d2, t, 20)).toEqual(true)        
-    })
+        expect(allowDiff(d2, t, 100)).toEqual(true)        
+    }).catch(e => {
+        console.error(e)
+    }, 1000)
 
 
 })

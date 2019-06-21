@@ -4,7 +4,8 @@
   "description": "frequently used tools",
   "main": "index.js",
   "scripts": {
-    "test": "jest ."
+    "test": "jest .",
+    "test2": "jest ./__tests__/"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,11 @@
   },
   "homepage": "https://github.com/nerjs/nerjs-utils#readme",
   "devDependencies": {
+    "@jest-runner/electron": "^2.0.1",
+    "electron": "^5.0.4",
     "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "is-electron-renderer": "^2.0.1"
   }
 }
