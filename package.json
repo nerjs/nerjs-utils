@@ -1,0 +1,26 @@
+{
+  "name": "nerjs-utils",
+  "version": "0.1.0",
+  "description": "frequently used tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nerjs/nerjs-utils.git"
+  },
+  "keywords": [
+    "utils",
+    "js",
+    "javascript",
+    "math",
+    "electron"
+  ],
+  "author": "nerjs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nerjs/nerjs-utils/issues"
+  },
+  "homepage": "https://github.com/nerjs/nerjs-utils#readme"
+}
