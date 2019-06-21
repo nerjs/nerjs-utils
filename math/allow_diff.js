@@ -1,0 +1,1 @@
+module.exports = (a, b, ad) => Math.abs(a - b) <= ad
