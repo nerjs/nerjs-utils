@@ -1,0 +1,1 @@
+module.exports = (min=0, max=0, target=0) => target >= min && target <= max
