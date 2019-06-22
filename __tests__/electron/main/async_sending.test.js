@@ -13,5 +13,5 @@ test('async sending', async () => {
     send('test')
     await asyncListener(ipcFalse, 'test')
 
-    expect(Date.now() - t > 50).toEqual(true)
+    expect(Date.now() - t >= 50).toEqual(true)
 })
