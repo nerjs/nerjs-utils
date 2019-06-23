@@ -3,11 +3,11 @@ frequently used tools
 
 
 
-- [core utils](./docs/core.md#core-js-utils) 
-  - core utils [for tests](./docs/core.md#for-tests) 
-- [math utils](./docs/math.md#math-js-utils) 
-- [electron utils](./docs/electron.md#electron-utils) 
-  - electron utils [for tests](./docs/electron.md#For-tests) 
+- [core utils](https://github.com/nerjs/nerjs-utils/blob/master/docs/core.md#core-js-utils) 
+  - core utils [for tests](https://github.com/nerjs/nerjs-utils/blob/master/docs/core.md#for-tests) 
+- [math utils](https://github.com/nerjs/nerjs-utils/blob/master/docs/math.md#math-js-utils) 
+- [electron utils](https://github.com/nerjs/nerjs-utils/blob/master/docs/electron.md#electron-utils) 
+  - electron utils [for tests](https://github.com/nerjs/nerjs-utils/blob/master/docs/electron.md#For-tests) 
 
 ***
 
