@@ -1,5 +1,6 @@
 
 const TIME_EXPIRED_MESSAGE = 'Timed out to open window'
+const UNKNOWN_ERROR_MESSAGE = 'Unknown error'
 
 module.exports = (emitter, event, eventErr, t=3000) => new Promise((resolve, reject) => {
     if (typeof eventErr == 'number') {
@@ -21,11 +22,24 @@ module.exports = (emitter, event, eventErr, t=3000) => new Promise((resolve, rej
         resetHandlers();
         resolve(Array.from(arguments))
     }
-
-    handlerErr = function() {
+    handlerErr = function(_, e) {
         if (!tid) return
         resetHandlers();
-        reject(Array.from(arguments))
+        if (_ instanceof Error) {
+            reject(_)
+        } else if (typeof _ == 'string') {
+            reject(new Error(_))
+        } else if (e instanceof Error) {
+            reject(e)
+        } else if (typeof e == 'string') {
+            reject(new Error(e)) 
+        } else if (typeof _ == 'object' && _.message) {
+            reject(new Error(_.message))
+        } else if (typeof e == 'object' && e.message) {
+            reject(new Error(e.message))
+        } else {
+            reject(new Error(UNKNOWN_ERROR_MESSAGE))
+        }
     }
     
     
@@ -47,4 +61,5 @@ module.exports = (emitter, event, eventErr, t=3000) => new Promise((resolve, rej
 })
 
 module.exports.TIME_EXPIRED_MESSAGE = TIME_EXPIRED_MESSAGE
+module.exports.UNKNOWN_ERROR_MESSAGE = UNKNOWN_ERROR_MESSAGE
 
