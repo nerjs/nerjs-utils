@@ -17,3 +17,37 @@ frequently used tools
 ```
 npm i --save nerjs-utils 
 ```
+
+## import
+
+
+## imports 
+
+```js
+const { [moduleCategory]: { [moduleName] } } = require('nerjs-utils')
+```
+or:
+```js
+const { [moduleName] } = require('nerjs-utils/[moduleCategory]')
+```
+or:
+```js
+const moduleName = require('nerjs-utils/[moduleCategory]/[moduleName]')
+```
+***
+
+
+## imports utils for tests
+
+```js
+const { { [moduleCategory]: { tests: { [moduleName] } } } } = require('nerjs-utils')
+```
+or:
+```js
+const { [moduleName] } = require('nerjs-utils/[moduleCategory]/tests')
+```
+or:
+```js
+const moduleName = require('nerjs-utils/[moduleCategory]/tests/[moduleName]')
+```
+***
