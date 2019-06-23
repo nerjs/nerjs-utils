@@ -24,7 +24,13 @@ module.exports = async (src, opt, timeoutOpen=3000, timeoutA=3000) => {
 
     win.webContents.send(constants.EVENT_SEND, src, timeoutA)
 
-    await asyncListener(ipcMain, constants.EVENT_SUCCESS, constants.EVENT_FAIL, timeoutA * 1.5)
+    try {
+        await asyncListener(ipcMain, constants.EVENT_SUCCESS, constants.EVENT_FAIL, timeoutA * 1.5)
+    } catch(e) {
+        if (typeof e == 'string') throw new Error(e)
+        throw e
+    }
+    
     return win
 }
 

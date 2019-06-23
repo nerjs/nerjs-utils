@@ -66,7 +66,7 @@ const emitter = new EventEmitter()
 
 const emit = asyncEmitter(emitter, 200)
 
-send('test_event')
+emit('test_event')
 
 console.time('test time')
 emitter.once('test_event', () => {

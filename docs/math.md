@@ -70,6 +70,8 @@ between(10, 20, 25) // false
 | min | Number | 0 | yes | 
 | max | Number | 1 | yes | 
 
+> return: ***Number***
+
 ```js
 const random = require('nerjs-utils/math/random')
 

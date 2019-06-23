@@ -9,6 +9,7 @@ const codes = {
 class OWError extends Error {
     constructor(code) {
         super(codes[code])
+        this.code = code
     }
 }
 
