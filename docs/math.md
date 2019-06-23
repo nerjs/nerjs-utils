@@ -20,11 +20,13 @@
 
 ***arguments:***
 
+
 | [name] | type | default | required |
-| :--: | :--: | :--:| :--: | :-- | 
+| :--: | :--: | :--:| :--: |
 | min | Number | undefined | yes |
 | max | Number | undefined | yes |
 | target | Number | undefined | yes | 
+
 
 > return: ***Boolean*** 
 
@@ -44,7 +46,7 @@ allowDiff(10, 20, 25) // true
 ***arguments:***
 
 | [name] | type | default | required |
-| :--: | :--: | :--:| :--: | :-- | 
+| :--: | :--: | :--:| :--: | 
 | min | Number | undefined | yes |
 | max | Number | undefined | yes |
 | target | Number | undefined | yes | 
