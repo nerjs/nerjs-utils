@@ -17,11 +17,6 @@ describe('core test -> async listener', () => {
         await asyncListener(emitter, 'test')
         expect(!!((Date.now() - t) >= 100)).toBeTruthy()
 
-
-        // setTimeout(() => emitter.emit('test3','1'), 100)
-        // await expect(asyncListener(emitter, 'test2', 'test3')).rejects.toThrow('1')
-        // await expect(asyncListener(emitter, 'test4', 'test5', 200)).rejects.toThrow(asyncListener.TIME_EXPIRED_MESSAGE)
-
     })    
 
     test('fail', async () => {
@@ -30,7 +25,6 @@ describe('core test -> async listener', () => {
             emit = asyncEmitter(emitter, 100),
             errMess = 'err test mess';
 
-        console.time('f')
 
         await expect(asyncListener(emitter, 'test2', 'test3', 500)).rejects.toThrow(asyncListener.TIME_EXPIRED_MESSAGE)
         expect((Date.now() - t) >= 500).toBeTruthy()
@@ -59,11 +53,7 @@ describe('core test -> async listener', () => {
         
 
         emit('test', {}, {message: errMess})
-        await expect(asyncListener(emitter, '_', 'test')).rejects.toThrow(errMess)
-        
-        console.timeEnd('f')
-
-        
+        await expect(asyncListener(emitter, '_', 'test')).rejects.toThrow(errMess)        
     })
 })
 

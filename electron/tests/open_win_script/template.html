@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        (function() {
+            const { ipcRenderer } = require('electron')
+            const constants = require('./constants')
+
+            ipcRenderer.once(constants.EVENT_SEND, (e, src, t=2000) => {
+                let tid;
+                const script = document.createElement('script')
+                script.src = src;
+
+                tid = setTimeout(() => {
+                    if (!tid) return;
+                    tid = null
+                    script.onerror = null
+                    script.onload = null
+                    ipcRenderer.send(constants.EVENT_FAIL, constants.ERROR_MESSAGE)
+                }, t)
+
+                script.onload = () => {
+                    if (!tid) return;
+                    clearTimeout(tid)
+                    tid = null
+                    ipcRenderer.send(constants.EVENT_SUCCESS)
+                }
+
+                script.onerror = () => {
+                    if (!tid) return;
+                    clearTimeout(tid)
+                    tid = null
+                    ipcRenderer.send(constants.EVENT_FAIL, constants.ERROR_MESSAGE)
+                }
+
+                document.body.append(script)
+            })
+        })()    
+    </script>
+</body>
+</html>

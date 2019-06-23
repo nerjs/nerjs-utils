@@ -30,6 +30,7 @@
     "jest": "^24.8.0"
   },
   "dependencies": {
-    "is-electron-renderer": "^2.0.1"
+    "is-electron-renderer": "^2.0.1",
+    "merge": "^1.2.1"
   }
 }
