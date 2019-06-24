@@ -4,8 +4,7 @@
   "description": "frequently used tools",
   "main": "index.js",
   "scripts": {
-    "test": "jest .",
-    "test2": "jest ./__tests__/"
+    "test": "jest ."
   },
   "repository": {
     "type": "git",

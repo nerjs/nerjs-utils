@@ -1,4 +1,5 @@
-# electron utils
+# electron utils 
+utils for [Electron.js](https://electronjs.org/)
 
 - [README](../README.md)
 - [core utils](./core.md#core-js-utils) 
