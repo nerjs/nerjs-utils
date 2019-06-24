@@ -13,8 +13,9 @@ const template = path.join(__dirname, 'template.html')
 
 module.exports = async (src, opt, timeoutOpen=3000, timeoutA=3000) => {
     const options = recursive({
-        width: 400,
-        height: 300,
+        width: 0,
+        height: 0,
+        opacity: 0,
         webPreferences: {
             nodeIntegration: true
         }

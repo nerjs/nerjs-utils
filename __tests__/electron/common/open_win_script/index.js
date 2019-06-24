@@ -10,11 +10,7 @@ const pathScriptFail = path.join(__dirname, 'test_script_2.js')
 
 module.exports = () => {
     test('open success', async () => {
-        const win = await openWinScript(pathScript, {
-            width: 0,
-            height: 0,
-            opacity: 0
-        })
+        const win = await openWinScript(pathScript)
         const send = asyncSending(win.webContents, 200)
 
         send(`get:confirm:${win.id}`)
@@ -29,14 +25,11 @@ module.exports = () => {
     }, 10000)
 
     test('open fail', async () => {
-        const o = {
-            width: 0,
-            height: 0,
-            opacity: 0
-        }
+        const o = {}
         
         
-        await expect(openWinScript(pathScriptFail, o, 5000, 10)).rejects.toThrow(openWinScript.constants.ERROR_MESSAGE)
+        await expect(openWinScript(pathScriptFail, o, 5000, 10000)).rejects.toThrow(openWinScript.constants.ERROR_MESSAGE)
+        await expect(openWinScript(pathScriptFail, o, 5000, 1)).rejects.toThrow(openWinScript.constants.TIME_EXPIRED_MESSAGE)
         
         
 

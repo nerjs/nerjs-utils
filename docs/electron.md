@@ -187,7 +187,7 @@ emitter.once('test_event', () => {
 | [name] | type | default | required | description | 
 | :--: | :--: | :--:| :--: | :-- | 
 | src | String | undefined | yes | Полный путь к файлу js | 
-| props | Object | undefined | no | Параметры для создания окна [BrowserWindow](https://electronjs.org/docs/api/browser-window#new-browserwindowoptions) | 
+| props | Object | undefined | no | Параметры для создания окна [BrowserWindow](https://electronjs.org/docs/api/browser-window#new-browserwindowoptions). по умолчанию `width`, `height`, и `opacity` равны 0. | 
 | timeoutOpen | Number | 3000 | no | Допустимая задержка для открытия окна. [props.time](#openWin) | 
 | timeoutA | Number | 3000 | no | Допустимая задержка для ожидания подтверждения подключения скрипта. [ptops.time](./core.md#asyncListener) | 
 

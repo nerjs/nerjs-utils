@@ -1,6 +1,6 @@
 {
   "name": "nerjs-utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "frequently used tools",
   "main": "index.js",
   "scripts": {
