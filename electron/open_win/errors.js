@@ -13,5 +13,16 @@ class OWError extends Error {
     }
 }
 
-exports = module.exports = OWError
+
+class LoadError extends Error {
+    constructor(data) {
+        super(data.errorDescription)
+        Object.keys(data).forEach(key => {
+            this[key] = data[key]
+        })
+    }
+}
+
+exports.OWError = OWError
+exports.LoadError = LoadError
 exports.codes = codes

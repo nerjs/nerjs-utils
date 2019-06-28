@@ -34,7 +34,9 @@ module.exports = () => {
     })
 
     test('template ', async () => {
-        const win = await openWin(template, options)
+        let win;
+        
+        win = await openWin(template, options)
 
         const send = asyncSending(win.webContents)
         send('test2')
@@ -43,5 +45,9 @@ module.exports = () => {
         expect(res[1]).toEqual(template)
 
         win.close()
+
+        await expect(openWin(template + 'l', options)).rejects.toThrow('ERR_FILE_NOT_FOUND')
+        
+
     })
 }

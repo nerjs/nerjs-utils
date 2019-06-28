@@ -1,8 +1,7 @@
 const url = require('url')
 
 const BrowserWindow = require('./bw')
-const OWError = require('./errors')
-
+const { OWError, LoadError } = require('./errors')
 
 
 module.exports = (template, props, t=5000) => new Promise((resolve, reject) => {
@@ -41,10 +40,10 @@ module.exports = (template, props, t=5000) => new Promise((resolve, reject) => {
         resolve(win)
     }
 
-    handlerErr = e => {
-        if (!tid) return;
+    handlerErr = (event, errorCode, errorDescription, templateUrl, isMainFrame, frameProcessId) => {
+        if (!tid) return; 
         resetHandlers(true);
-        reject(e)
+        reject(new LoadError({ errorCode, errorDescription, templateUrl, isMainFrame, frameProcessId }))
     }
 
     win.on('ready-to-show', handler)
