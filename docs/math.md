@@ -71,8 +71,11 @@ between(10, 20, 25) // false
 | :--: | :--: | :--:| :--: | 
 | min | Number | 0 | yes | 
 | max | Number | 1 | yes | 
+| mustFloat | Boolean | undefined | no | 
 
-> return: ***Number***
+> return: ***Number*** 
+
+Если ***mustFloat*** установлен как `true` - результат будет дробным числом, без приведения с помощью `Math.round()`.
 
 ```js
 const random = require('nerjs-utils/math/random')
