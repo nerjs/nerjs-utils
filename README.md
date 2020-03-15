@@ -50,3 +50,5 @@ or:
 const moduleName = require('nerjs-utils/[moduleCategory]/tests/[moduleName]')
 ```
 ***
+
+:white_check_mark:
